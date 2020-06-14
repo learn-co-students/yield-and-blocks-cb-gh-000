@@ -1,6 +1,20 @@
-def hello_t
+names = []
+
+def hello_t(names)
+  if block_given?
+    name = 0
+
+    while name < names.length
+        yield names[name]
+        name += 1
+    end
+
+    names
+  else
+    puts "Hey! No block was given!"
+  end
 
 end
 
-# call your method here!
 
+hello_t(names)
